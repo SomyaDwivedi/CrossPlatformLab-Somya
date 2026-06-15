@@ -1,0 +1,43 @@
+name: Multi-OS Testing - Somya
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Testing
+        run: echo "Testing on Ubuntu..."
+
+      - name: Display OS Info
+        run: uname -a
+
+      - name: Create Test File
+        run: echo "Ubuntu test by Somya" > test-ubuntu.txt
+
+      - name: Display File Contents
+        run: cat test-ubuntu.txt
+
+      - name: Print Completed
+        run: echo "Ubuntu tests completed"
+
+  test-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Print Testing
+        run: echo "Testing on Windows..."
+
+      - name: Display OS Info
+        run: systeminfo
+
+      - name: Create Test File
+        run: echo Windows test by Somya > test-windows.txt
+
+      - name: Display File Contents
+        run: type test-windows.txt
+
+      - name: Print Completed
+        run: echo "Windows tests completed"
